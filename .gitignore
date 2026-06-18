@@ -1,22 +1,40 @@
-# Dépendances
+# Dépendances - ne jamais committer
 node_modules/
 
 # Fichier contenant les clés Supabase - NE JAMAIS COMMIT
 src/config/env.ts
 
-# React Native / Android
+# React Native / Android - fichiers générés
 android/app/build/
 android/build/
 android/.gradle/
+android/.cxx/
+android/.kotlin/
 *.keystore
 !debug.keystore
+
+# iOS
+ios/build/
+ios/Pods/
 
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # OS
 .DS_Store
+Thumbs.db
 
-# Métro / cache
+# Metro / cache
 .metro-health-check*
+.cache/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Fichier workflow mal placé à la racine (il doit être dans .github/workflows/)
+android.yml

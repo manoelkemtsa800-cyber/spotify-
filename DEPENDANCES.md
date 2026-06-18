@@ -24,8 +24,21 @@ npm install react-native-track-player
 
 ## 4. Hors-ligne : base de données locale + fichiers + réseau
 
+⚠️ Mise à jour : `react-native-sqlite-storage` est abandonné et ne
+compile plus avec les versions récentes de Gradle (utilise `jcenter()`,
+fermé depuis 2021). On utilise `@op-engineering/op-sqlite` à la place,
+qui est maintenu et compatible.
+
+D'abord, si tu avais déjà installé l'ancienne librairie, désinstalle-la :
+
 ```
-npm install react-native-sqlite-storage react-native-fs @react-native-community/netinfo
+npm uninstall react-native-sqlite-storage
+```
+
+Puis installe la nouvelle :
+
+```
+npm install @op-engineering/op-sqlite react-native-fs @react-native-community/netinfo
 ```
 
 ## 5. Sélecteur de fichiers (pour uploader sa musique) + slider (barre de progression du player)

@@ -1,97 +1,73 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Spotify Clone — React Native
 
-# Getting Started
+Clone de Spotify en React Native CLI (Android), avec :
+- Authentification email/mot de passe + mode sans compte (invité)
+- Upload de fichiers audio personnels vers Supabase Storage
+- Lecture audio en arrière-plan (react-native-track-player)
+- Playlists, recherche, recommandations basées sur l'historique
+- Mode hors-ligne : téléchargement local + SQLite + synchronisation auto
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Stack technique
 
-## Step 1: Start Metro
+- React Native 0.86 (CLI pur, sans Expo)
+- Supabase (base de données PostgreSQL + authentification + stockage fichiers)
+- react-native-track-player (lecture audio native)
+- @op-engineering/op-sqlite (base de données locale pour le mode hors-ligne)
+- react-native-fs (gestion des fichiers locaux)
+- @react-navigation/native (navigation par onglets + stack)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Installation
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 1. Cloner le repo
 
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+git clone https://github.com/manoelkemtsa800-cyber/spotify-.git
+cd spotify-
 ```
 
-## Step 2: Build and run your app
+### 2. Créer le fichier de configuration Supabase
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Copie `src/config/env.example.ts` vers `src/config/env.ts` et remplis tes clés :
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```
+cp src/config/env.example.ts src/config/env.ts
 ```
 
-### iOS
+Puis édite `src/config/env.ts` avec tes vraies valeurs (Project Settings > API dans Supabase).
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### 3. Installer les dépendances
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```
+npm install
 ```
 
-Then, and every time you update your native dependencies, run:
+Le script `postinstall` applique automatiquement le correctif Kotlin
+pour `react-native-track-player`.
 
-```sh
-bundle exec pod install
+### 4. Créer les tables dans Supabase
+
+Ouvre `supabase/schema.sql`, copie tout le contenu, colle-le dans
+Supabase > SQL Editor > New query > Run.
+
+### 5. Lancer l'app (Android)
+
+```
+npx react-native start
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Dans un second terminal :
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```
+npx react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Build APK via GitHub Actions
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Le workflow `.github/workflows/android.yml` génère automatiquement un APK
+à chaque push sur `main`. Pour que ça fonctionne, configure ces secrets
+dans Settings > Secrets and variables > Actions de ton repo GitHub :
 
-## Step 3: Modify your app
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+L'APK est disponible dans l'onglet Actions > ton build > Artifacts.

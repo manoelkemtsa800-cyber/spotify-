@@ -45,6 +45,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/arm64-v8a/OPSQLiteSpec_autolinked_build/cmake_install.cmake")
+  include("C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/arm64-v8a/rnasyncstorage_autolinked_build/cmake_install.cmake")
   include("C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/arm64-v8a/RNCNetInfoSpec_autolinked_build/cmake_install.cmake")
   include("C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/arm64-v8a/RNCSlider_autolinked_build/cmake_install.cmake")
   include("C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/arm64-v8a/rndocumentpickerCGen_autolinked_build/cmake_install.cmake")

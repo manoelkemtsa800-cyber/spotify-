@@ -4,6 +4,9 @@ C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/CMakeFil
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/OPSQLiteSpec_autolinked_build/CMakeFiles/react_codegen_OPSQLiteSpec.dir
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/OPSQLiteSpec_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/OPSQLiteSpec_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir
+C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/rebuild_cache.dir
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/RNCNetInfoSpec_autolinked_build/CMakeFiles/react_codegen_RNCNetInfoSpec.dir
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/RNCNetInfoSpec_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/armeabi-v7a/RNCNetInfoSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

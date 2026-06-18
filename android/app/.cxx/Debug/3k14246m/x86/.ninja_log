@@ -1,0 +1,14 @@
+# ninja log v5
+5	478	0	C:/Users/hp/Desktop/Spotify/android/app/.cxx/Debug/3k14246m/x86/CMakeFiles/cmake.verify_globs	55c6ea9ff4a070b3
+45	32482	8034385634026949	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/8bb522eca500349c258fe92177657ce2/codegen/jni/react/renderer/components/safeareacontext/EventEmitters.cpp.o	fe3246789291adb6
+2	61994	8034385929094027	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/62da4eb8a6eb0c1036b0956710932d54/cpp/react/renderer/components/safeareacontext/RNCSafeAreaViewState.cpp.o	758618d9d5747b15
+55	64220	8034385951303955	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/8bb522eca500349c258fe92177657ce2/codegen/jni/react/renderer/components/safeareacontext/ShadowNodes.cpp.o	b4decf4e4eeb46d4
+24	67159	8034385980303959	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/a7e8e5b021f1eead0387cd318cb09444/source/codegen/jni/react/renderer/components/safeareacontext/Props.cpp.o	aa4837cefcd92729
+35	79229	8034386099424078	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b1d8c6499a6bb0a61f72aa5345ed9a96/jni/react/renderer/components/safeareacontext/ComponentDescriptors.cpp.o	58e934c2286bb466
+32505	85316	8034386159703980	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/377f5b71ed1074dc4e77c87ed6da00b1/build/generated/source/codegen/jni/safeareacontext-generated.cpp.o	844518e1455c0706
+12	89694	8034386204769294	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/3bf3366c7d15b3e4d5a26a5310644350/react/renderer/components/safeareacontext/RNCSafeAreaViewShadowNode.cpp.o	d51ead9ad603f13c
+62004	97937	8034386287963384	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/a7e8e5b021f1eead0387cd318cb09444/source/codegen/jni/react/renderer/components/safeareacontext/States.cpp.o	9e5e8e5a8a2696b4
+97938	103223	8034386333794383	C:/Users/hp/Desktop/Spotify/android/app/build/intermediates/cxx/Debug/3k14246m/obj/x86/libreact_codegen_safeareacontext.so	a8cbd4bd52bcfbf8
+67161	118921	8034386499162841	CMakeFiles/appmodules.dir/OnLoad.cpp.o	fda8748a5ab21b6
+64223	139490	8034386703060940	CMakeFiles/appmodules.dir/C_/Users/hp/Desktop/Spotify/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	bf39afc3501143d3
+139491	141088	8034386715763462	C:/Users/hp/Desktop/Spotify/android/app/build/intermediates/cxx/Debug/3k14246m/obj/x86/libappmodules.so	8a3e61ab35b75550

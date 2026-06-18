@@ -1,45 +1,37 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useEffect } from 'react';
+import { AuthProvider } from './src/context/AuthContext';
+import { PlayerProvider } from './src/context/PlayerContext';
+import RootNavigator from './src/navigation/RootNavigator';
+import { setupPlayer } from './src/services/playerService';
+import { useNetworkStatus } from './src/hooks/useNetworkStatus';
+import { processSyncQueue } from './src/services/syncService';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+// Petit composant interne qui déclenche la synchro automatique
+// dès que la connexion internet revient (utile pour le mode hors-ligne)
+function AutoSync() {
+  const isOnline = useNetworkStatus();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    if (isOnline) {
+      processSyncQueue().catch((err) => console.error('Erreur synchro:', err));
+    }
+  }, [isOnline]);
 
-  return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
+  return null;
 }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+export default function App() {
+  useEffect(() => {
+    // Initialise le lecteur audio une seule fois au démarrage de l'app
+    setupPlayer().catch((err) => console.error('Erreur setup player:', err));
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
+    <AuthProvider>
+      <PlayerProvider>
+        <AutoSync />
+        <RootNavigator />
+      </PlayerProvider>
+    </AuthProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
